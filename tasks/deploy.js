@@ -94,16 +94,6 @@ module.exports = function(grunt) {
         return true;
     }
 
-    function checkProperty(value, invalidValues, errMessage) {
-        if (valueIsInvalid(value, invalidValues)) {
-            grunt.log.warn(errMessage);
-        }
-    }
-
-    function valueIsInvalid(value, invalidValues) {
-        return invalidValues.indexOf(value) > -1;
-    }
-
     function checkDeployedToStage(done) {
         var path   = require('path'),
             env    = grunt.config.get('env'),
