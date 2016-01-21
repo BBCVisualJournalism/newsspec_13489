@@ -20,9 +20,13 @@ module.exports = function(grunt) {
         }
     });
 
+
     grunt.loadNpmTasks('grunt-bake');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-deploy-to-env');
+
+    grunt.loadTasks('tasks');
 
     grunt.registerTask('build', ['bake:test', 'copy:inc']);
 
