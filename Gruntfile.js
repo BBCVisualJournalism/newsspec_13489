@@ -4,14 +4,14 @@ module.exports = function(grunt) {
         bake: {
             test: {
                 files: {
-                    "dist/test.html": "src/test.html",
+                    "content/test.html": "source/test.html",
                 }
             }
         }, 
         copy: {
             inc: {
-                src: 'src/index.inc',
-                dest: 'dist/index.inc'
+                src: 'source/index.inc',
+                dest: 'content/index.inc'
             }
         },
         watch: {
