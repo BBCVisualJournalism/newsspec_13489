@@ -28,6 +28,18 @@ module.exports = function(grunt) {
         } 
     });
 
+    grunt.registerTask('overwrite-files', function () {
+        grunt.file.expand('content/**').forEach(function (file) {
+            if (!grunt.file.isDir(file)) {
+                grunt.log.writeln('Overwriting: ' + file);
+                grunt.file.write(file, '');
+            }
+        });
+    
+        grunt.log.writeln('');
+        grunt.log.ok('Content directory has been blanked out. You should now deploy and FTP to the env you want to disable');
+    });
+
 
     grunt.loadNpmTasks('grunt-bake');
     grunt.loadNpmTasks('grunt-contrib-watch');
@@ -38,6 +50,7 @@ module.exports = function(grunt) {
     grunt.loadTasks('tasks');
 
     grunt.registerTask('build', ['bake:test', 'copy:inc', 'uglify:js']);
+    grunt.registerTask('disable', ['build', 'overwrite-files']);
 
     grunt.registerTask('default', ['build']);
 
