@@ -5,6 +5,7 @@ module.exports = function(grunt) {
             test: {
                 files: {
                     "content/test.html": "source/test.html",
+                    "content/index.inc.app.html": "source/index.inc.app.html"
                 }
             }
         }, 
@@ -12,12 +13,13 @@ module.exports = function(grunt) {
             inc: {
                 src: 'source/index.inc',
                 dest: 'content/index.inc'
-            },
+            }
+        },
+        uglify: {
             js: {
-                src: 'source/js/*',
-                dest: 'content/js/',
-                flatten: true,
-                expand: true
+                files: {
+                    'content/js/elementresizer.js': ['source/js/elementresizer.js']
+                }
             }
         },
         watch: {
@@ -31,10 +33,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-deploy-to-env');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.loadTasks('tasks');
 
-    grunt.registerTask('build', ['bake:test', 'copy:inc', 'copy:js']);
+    grunt.registerTask('build', ['bake:test', 'copy:inc', 'uglify:js']);
 
     grunt.registerTask('default', ['build']);
 

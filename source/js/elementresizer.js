@@ -39,7 +39,6 @@ var ElementResizer = function (options) {
         return function () {
             if (!isRunning) {
                 event();
-                console.log('Calling')
 
                 isRunning = true;
                 setTimeout(function (){
@@ -51,6 +50,11 @@ var ElementResizer = function (options) {
 
     var init = function() {
         resizeElement();
-        window.addEventListener('resize', throttledResize(resizeElement));
+
+        if (window.addEventListener) {
+            window.addEventListener('resize', throttledResize(resizeElement));
+        } else {
+            window.attachEvent('onresize', throttledResize(resizeElement));
+        }
     }();
 };

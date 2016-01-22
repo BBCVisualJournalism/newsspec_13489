@@ -1,7 +1,5 @@
+<!--NEWSSPEC-13489 -->
 <style>
-    body{
-        background-color: gold;
-    }
     .newsspec_13489--ap-iframe{
         width: 100%;
         height: 730px;
@@ -19,19 +17,19 @@
     var newsspec_13489_elementQueries = [
         {
             'min-width': 0,
-            'height': 730
+            'height': 738
         },
         {
             'min-width': 245,
-            'height': 560
+            'height': 568
         },
         {
-            'min-width': 480,
-            'height': 665
+            'min-width': 483,
+            'height': 685
         },
         {
-            'min-width': 640,
-            'height': 350
+            'min-width': 641,
+            'height': 358
         }
     ];
     ElementResizer({
@@ -39,3 +37,4 @@
         elementQueries: newsspec_13489_elementQueries
     })
 </script>
+<!--NEWSSPEC-13489-END -->
