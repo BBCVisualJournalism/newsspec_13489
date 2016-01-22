@@ -28,11 +28,29 @@ var ElementResizer = function (options) {
         var elementNeededHeight = getHeightFromElementWidth(elementWidth); 
 
         if (currentElementHeight !== elementNeededHeight) {
-            console.log('Setting height: ' + elementNeededHeight);
             setElementHeight(elementNeededHeight);
         }
     }
 
-    setInterval(resizeElement, 30);
-    resizeElement();
+    // Ensures the resize event is only called once every 30 miliseconds
+    function throttledResize(event) {
+        var isRunning = false;
+
+        return function () {
+            if (!isRunning) {
+                event();
+                console.log('Calling')
+
+                isRunning = true;
+                setTimeout(function (){
+                    isRunning = false
+                }, 30);
+            }
+        }
+    }
+
+    var init = function() {
+        resizeElement();
+        window.addEventListener('resize', throttledResize(resizeElement));
+    }();
 };
