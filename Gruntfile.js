@@ -12,12 +12,18 @@ module.exports = function(grunt) {
             inc: {
                 src: 'source/index.inc',
                 dest: 'content/index.inc'
+            },
+            js: {
+                src: 'source/js/*',
+                dest: 'content/js/',
+                flatten: true,
+                expand: true
             }
         },
         watch: {
-            files: ['<%= jshint.files %>'],
-            tasks: ['jshint']
-        }
+            files: ['source/**/*'],
+            tasks: ['default'],
+        } 
     });
 
 
@@ -28,7 +34,7 @@ module.exports = function(grunt) {
 
     grunt.loadTasks('tasks');
 
-    grunt.registerTask('build', ['bake:test', 'copy:inc']);
+    grunt.registerTask('build', ['bake:test', 'copy:inc', 'copy:js']);
 
     grunt.registerTask('default', ['build']);
 
