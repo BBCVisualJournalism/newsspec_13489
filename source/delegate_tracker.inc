@@ -8,7 +8,7 @@
     }
 </style>
 
-<iframe src="http://interactives.ap.org/2016/delegates-overview/?image=false&STATE=IA&date=0201&SITEID=BBC" scrolling="no" id="newsspec_13489--ap-iframe" class="newsspec_13489--ap-iframe">
+<iframe src="http://interactives.ap.org/2016/delegate-tracker/?SITEID=BBC" scrolling="no" id="newsspec_13489__delegate-tracker--ap-iframe" class="newsspec_13489--ap-iframe">
     Your browser does not support the <code>iframe</code> HTML tag. Try viewing this in a modern browser like Chrome, Safari, Firefox or Internet Explorer 9 or later.
 </iframe>
 
@@ -17,23 +17,27 @@
     var newsspec_13489_elementQueries = [
         {
             'min-width': 0,
-            'height': 2560
+            'height': 55060
         },
         {
-            'min-width': 245,
-            'height': 2000
+            'min-width': 266,
+            'height': 54500
         },
         {
-            'min-width': 480,
-            'height': 2450
+            'min-width': 481,
+            'height': 51760
+        },
+        {
+            'min-width': 531,
+            'height': 33600
         },
         {
             'min-width': 641,
-            'height': 1800
+            'height': 32700
         }
     ];
     ElementResizer({
-        el: document.getElementById('newsspec_13489--ap-iframe'),
+        el: document.getElementById('newsspec_13489__delegate-tracker--ap-iframe'),
         elementQueries: newsspec_13489_elementQueries
     })
 </script>

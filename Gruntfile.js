@@ -5,14 +5,21 @@ module.exports = function(grunt) {
             test: {
                 files: {
                     "content/test.html": "source/test.html",
-                    "content/index.inc.app.html": "source/index.inc.app.html"
+                    "content/overview_test.html": "source/overview_test.html",
+                    "content/iowa_primary_election_results_test.html": "source/iowa_primary_election_results_test.html",
+                    "content/delegate_tracker_test.html": "source/delegate_tracker_test.html",
+                    "content/index.inc.app.html": "source/index.inc.app.html",
+                    "content/iowa_primary_election_results.inc.app.html": "source/iowa_primary_election_results.inc.app.html",
+                    "content/delegate_tracker.inc.app.html": "source/delegate_tracker.inc.app.html"
                 }
             }
         }, 
         copy: {
             inc: {
-                src: 'source/index.inc',
-                dest: 'content/index.inc'
+                expand: true,
+                flatten: true,
+                src: ['source/*.inc'],
+                dest: 'content/'
             }
         },
         uglify: {
