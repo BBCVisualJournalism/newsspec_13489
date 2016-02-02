@@ -95,13 +95,10 @@ module.exports = function(grunt) {
     }
 
     function checkDeployedToStage(done) {
-        var path   = require('path'),
-            env    = grunt.config.get('env'),
-            config = grunt.file.readJSON('config.json'),
-            fs     = require('fs');
+        var fs     = require('fs');
 
         try {
-            var stagedProject = fs.lstatSync(env.stage.mount + '/news/special/' + config.year + '/newsspec_' + config.project_number + '/content/' + config.services.default);
+            var stagedProject = fs.lstatSync(env.stage.mount + '/news/special/' + PROJECT_YEAR + '/newsspec_' + PROJECT_NUMBER + '/content/');
 
             if (stagedProject.isDirectory()) {
                 grunt.log.writeln('This content is on stage - OK');

@@ -17,19 +17,19 @@
     var newsspec_13489_elementQueries = [
         {
             'min-width': 0,
-            'height': 2560
+            'height': 665
         },
         {
             'min-width': 245,
-            'height': 2000
+            'height': 510
         },
         {
             'min-width': 480,
-            'height': 2450
+            'height': 585
         },
         {
             'min-width': 641,
-            'height': 1800
+            'height': 310
         }
     ];
     ElementResizer({
