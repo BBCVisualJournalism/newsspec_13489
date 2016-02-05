@@ -1,0 +1,58 @@
+body{
+    color: #222;
+}
+
+#ap-nav{
+    display: none;
+}
+
+#ap-container-nav{
+    display: none !important;
+}
+
+.ap-container-content #ap-container-panels{
+    top: 0;
+}
+
+#timestamp{
+    text-align: left;
+}
+
+.ap-container-content header h1 {
+    display: none;
+}
+
+.ap-container-content #election-results #state-summaries{
+    margin-bottom: 10px;
+}
+.ap-container-content #election-results #state-summaries .winner-check{
+    display: none;
+}
+.ap-container-content .winner-check{
+    display: none !important;
+}
+.ap-container-content #election-results #state-summaries .candidate-summary{
+    display: block;
+    text-align: left;
+    padding-left: 0;
+}
+
+.ap-container-content #tabulated-state-results {
+    float: left !important;
+    width: 47%;
+    padding-right: 3%;
+}
+.ap-container-content #map-results {
+    float: right !important;
+    margin-top: 35px;
+    width: 50%;
+}
+.ap-container-content #county-select{
+    float: left;
+    overflow: hidden;
+}
+.ap-container-content #county-select .custom-combobox{
+    position: absolute;
+    margin-left: 0;
+}
+

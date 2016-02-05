@@ -20,6 +20,12 @@ module.exports = function(grunt) {
                 flatten: true,
                 src: ['source/*.inc'],
                 dest: 'content/'
+            },
+            css: {
+                expand: true,
+                flatten: true,
+                src: ['source/css/*.css'],
+                dest: 'content/css'
             }
         },
         uglify: {
@@ -56,7 +62,7 @@ module.exports = function(grunt) {
 
     grunt.loadTasks('tasks');
 
-    grunt.registerTask('build', ['bake:test', 'copy:inc', 'uglify:js']);
+    grunt.registerTask('build', ['bake:test', 'copy:inc', 'copy:css', 'uglify:js']);
     grunt.registerTask('disable', ['build', 'overwrite-files']);
 
     grunt.registerTask('default', ['build']);
