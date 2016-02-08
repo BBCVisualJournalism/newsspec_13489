@@ -14,7 +14,7 @@ require(['jquery'], function ($) {
 
     var iframeId = getParameterByName('iframeid');
     var shouldHideHeader = getParameterByName('hideheader') === 'true';
-    var headerOffset = shouldHideHeader ? 30 : 0;
+    var headerOffset = shouldHideHeader ? 0 : 30;
 
     var sendHeightPostMessage = function (height) {
         var message = {
@@ -24,9 +24,21 @@ require(['jquery'], function ($) {
         window.parent.postMessage(JSON.stringify(message), '*');
     };
 
+    var getTooltipHeightOffset = function () {
+        var $tooltip = $('#tooltip-county-results');
+        if ($tooltip.is(':visible')) {
+            return $tooltip.prop('scrollHeight') + $tooltip.height();
+        } else {
+            return 0;
+        }
+    };
+
     var lastSentHeight;
     var sendHeightToParent = function () {
-        var contentHeight = $('#map').height() + headerOffset;
+        var mapHeight = $('#map').height(),
+            tooltipHeight = getTooltipHeightOffset();
+
+        var contentHeight = Math.max(mapHeight, tooltipHeight) + headerOffset;
 
         if (contentHeight !== lastSentHeight) {
             lastSentHeight = contentHeight;
@@ -45,6 +57,6 @@ require(['jquery'], function ($) {
             'bottom': '0',
             'top': 'initial'
         });
-        $('#timestamp').hide();
+        $('body').addClass('hide-timestamp');
     }
 });
