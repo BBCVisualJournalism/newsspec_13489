@@ -2,15 +2,11 @@ body{
     color: #222;
 }
 
-#ap-nav{
-    display: none;
+#summary-candidate{
+    font-weight: bold;
 }
 
-#ap-container-nav{
-    display: none !important;
-}
-
-.ap-container-content #ap-container-panels{
+#ap-container-panels{
     top: 0;
 }
 
@@ -18,41 +14,65 @@ body{
     text-align: left;
 }
 
-.ap-container-content header h1 {
+header h1 {
     display: none;
 }
 
-.ap-container-content #election-results #state-summaries{
+#election-results #state-summaries{
     margin-bottom: 10px;
 }
-.ap-container-content #election-results #state-summaries .winner-check{
+#election-results #state-summaries .winner-check{
     display: none;
 }
-.ap-container-content .winner-check{
+.winner-check{
     display: none !important;
 }
-.ap-container-content #election-results #state-summaries .candidate-summary{
+.ap-container-content  #election-results #state-summaries .candidate-summary{
     display: block;
     text-align: left;
     padding-left: 0;
+    margin-left: 0;
+    border: 0;
 }
 
-.ap-container-content #tabulated-state-results {
+#tabulated-state-results {
     float: left !important;
     width: 47%;
     padding-right: 3%;
 }
-.ap-container-content #map-results {
-    float: right !important;
-    margin-top: 35px;
+#map-results {
+    float: right;
+    margin-top: 20px;
     width: 50%;
 }
-.ap-container-content #county-select{
+#county-select{
     float: left;
     overflow: hidden;
 }
-.ap-container-content #county-select .custom-combobox{
+#county-select .custom-combobox{
     position: absolute;
     margin-left: 0;
 }
 
+@media screen and (max-width: 540px){
+    #tabulated-state-results {
+        width: 100%;
+        float: none;
+    }
+    #map-results {
+        width: 94%;
+        float: none;
+        margin-top: 0;
+    }
+    #county-select .custom-combobox{
+        position: initial;
+    }
+}
+
+.ap-container-content #dem-footnote{
+    display: none;
+}
+
+#election-results{
+    overflow: hidden;
+}

@@ -10,7 +10,10 @@ module.exports = function(grunt) {
                     "content/delegate_tracker_test.html": "source/delegate_tracker_test.html",
                     "content/index.inc.app.html": "source/index.inc.app.html",
                     "content/iowa_primary_election_results.inc.app.html": "source/iowa_primary_election_results.inc.app.html",
-                    "content/delegate_tracker.inc.app.html": "source/delegate_tracker.inc.app.html"
+                    "content/delegate_tracker.inc.app.html": "source/delegate_tracker.inc.app.html",
+                    "content/map_election_results.inc": "source/map_election_results.inc",
+                    "content/map_election_results_test.html": "source/map_election_results_test.html",
+                    "content/map_election_results.inc.app.html": "source/map_election_results.inc.app.html"
                 }
             }
         }, 
@@ -31,7 +34,9 @@ module.exports = function(grunt) {
         uglify: {
             js: {
                 files: {
-                    'content/js/elementresizer.js': ['source/js/elementresizer.js']
+                    'content/js/elementresizer.js': ['source/js/elementresizer.js'],
+                    'content/js/postmessageresizer.js': ['source/js/postmessageresizer.js'],
+                    'content/js/iframe-map.js': ['source/js/iframe-map.js'],
                 }
             }
         },
