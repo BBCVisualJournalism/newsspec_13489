@@ -37,6 +37,7 @@ module.exports = function(grunt) {
                     'content/js/elementresizer.js': ['source/js/elementresizer.js'],
                     'content/js/postmessageresizer.js': ['source/js/postmessageresizer.js'],
                     'content/js/iframe-map.js': ['source/js/iframe-map.js'],
+                    'content/js/iframe-delegates.js': ['source/js/iframe-delegates.js']
                 }
             }
         },

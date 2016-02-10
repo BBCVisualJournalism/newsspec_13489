@@ -64,12 +64,33 @@ header h1 {
         float: none;
     }
     #map-results {
-        width: 94%;
+        width: 100%;
         float: none;
         margin-top: 0;
     }
     #county-select .custom-combobox{
         position: initial;
+    }
+    .ap-container-content #map #tooltip-county-results {
+       top: 0 !important;
+       left: 1% !important;
+       right: 1% !important;
+       padding-right: 0 !important;
+       width: 95% !important;
+       overflow: hidden;
+    }
+    .ap-container-content #map #tooltip-county-results #tooltip-verbose{
+        margin-top: 10px;
+        max-height: 180px;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+    .ap-container-content #map-results{
+        position: relative;
+    }
+    .ap-container-content #map #tooltip-county-results .county-tooltip table{
+        width: 96%;
+        margin: 0;
     }
 }
 

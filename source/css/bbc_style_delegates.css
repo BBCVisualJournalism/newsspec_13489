@@ -1,0 +1,11 @@
+body{
+    color: #222;
+}
+
+#timestamp{
+    text-align: left;
+}
+
+.hide-timestamp #timestamp {
+    display: none !important;
+}
