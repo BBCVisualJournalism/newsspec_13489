@@ -29,7 +29,12 @@ module.exports = function(grunt) {
         {'date': '0301', 'state': 'VT', 'party': 'GOP'},
         {'date': '0301', 'state': 'VA', 'party': 'GOP'},
         {'date': '0301', 'state': 'AK', 'party': 'GOP'},
-        {'date': '0301', 'state': 'CO', 'party': 'Dem'}
+        {'date': '0301', 'state': 'CO', 'party': 'Dem'},
+        {'date': '0322', 'state': 'AZ', 'party': 'Dem'},
+        {'date': '0322', 'state': 'AZ', 'party': 'GOP'},
+        {'date': '0322', 'state': 'ID', 'party': 'Dem'},
+        {'date': '0322', 'state': 'UT', 'party': 'Dem'},
+        {'date': '0322', 'state': 'UT', 'party': 'GOP'}
     ];
 
     var bakeContentOptions = function () {
