@@ -45,9 +45,9 @@ module.exports = function(grunt) {
         // {'date': '0322', 'state': 'UT', 'party': 'GOP'},
         
         {'date': '0405', 'state': 'WI', 'party': 'GOP'},
-        {'date': '0405', 'state': 'WI', 'party': 'DEM'},
+        {'date': '0405', 'state': 'WI', 'party': 'Dem'},
         {'date': '0409', 'state': 'WY', 'party': 'GOP'},
-        {'date': '0409', 'state': 'WY', 'party': 'DEM'}
+        {'date': '0409', 'state': 'WY', 'party': 'Dem'}
 
     ];
 
@@ -175,7 +175,7 @@ module.exports = function(grunt) {
 
     grunt.loadTasks('tasks');
 
-    grunt.registerTask('build', _.merge(bakeBuildTasks, ['bake:standard', 'copy:inc', 'copy:css', 'uglify:js']));
+    grunt.registerTask('build', ['bake', 'copy:inc', 'copy:css', 'uglify:js']);
     grunt.registerTask('disable', ['build', 'overwrite-files']);
 
     grunt.registerTask('default', ['build']);
