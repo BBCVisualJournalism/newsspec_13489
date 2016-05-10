@@ -43,12 +43,12 @@ module.exports = function(grunt) {
         // {'date': '0322', 'state': 'ID', 'party': 'Dem'},
         // {'date': '0322', 'state': 'UT', 'party': 'Dem'},
         // {'date': '0322', 'state': 'UT', 'party': 'GOP'},
-        
-        {'date': '0405', 'state': 'WI', 'party': 'GOP'},
-        {'date': '0405', 'state': 'WI', 'party': 'Dem'},
-        {'date': '0409', 'state': 'WY', 'party': 'GOP'},
-        {'date': '0409', 'state': 'WY', 'party': 'Dem'}
-
+        // {'date': '0405', 'state': 'WI', 'party': 'GOP'},
+        // {'date': '0405', 'state': 'WI', 'party': 'Dem'},
+        // {'date': '0409', 'state': 'WY', 'party': 'GOP'},
+        // {'date': '0409', 'state': 'WY', 'party': 'Dem'},
+        {'date': '0503', 'state': 'IN', 'party': 'Dem'},
+        {'date': '0503', 'state': 'IN', 'party': 'GOP'}
     ];
 
     var bakeContentOptions = function () {
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
                 files: {
                 }
             };
-            
+
             generatedFile.files['content/elections_map_' + state + '_' + party + '_test.html'] = 'source/elections_map_generator_test.html';
             generatedFile.files['content/elections_map_' + state + '_' + party + '.inc'] = 'source/elections_map_generator.inc';
             generatedFile.files['content/elections_map_' + state + '_' + party + '.inc.app.html'] = 'source/elections_map_generator.inc.app.html';
@@ -107,7 +107,7 @@ module.exports = function(grunt) {
     };
 
     var bakeConfig = _.merge(bakeStandard, bakeGeneratedFiles);
-    
+
     var bakeBuildTasks = function () {
         var buildTasks = [];
         for(var i = 0; i < statesAndDates.length; i++) {
@@ -123,7 +123,7 @@ module.exports = function(grunt) {
 
 
     grunt.initConfig({
-        bake: bakeConfig, 
+        bake: bakeConfig,
         copy: {
             inc: {
                 expand: true,
@@ -151,7 +151,7 @@ module.exports = function(grunt) {
         watch: {
             files: ['source/**/*'],
             tasks: ['default'],
-        } 
+        }
     });
 
     grunt.registerTask('overwrite-files', function () {
@@ -161,7 +161,7 @@ module.exports = function(grunt) {
                 grunt.file.write(file, '');
             }
         });
-    
+
         grunt.log.writeln('');
         grunt.log.ok('Content directory has been blanked out. You should now deploy and FTP to the env you want to disable');
     });
